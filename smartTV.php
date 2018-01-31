@@ -4,10 +4,11 @@
  * ----------------------------------------
  * @title PHP-LG-SmartTV-Pre2012
  * @desc LG SmartTV Pre 2012 API
- * @author Daniel Sousa / Steve Winfield
+ * @author Daniel Sousa
+ * @author Steve Winfield
  * ----------------------------------------
  * This code was adapted from PHP-LG-SmartTV by Steve Winfield
- * to work with older LG Smart TVs.
+ * to work with older LG Smart TVs that use the HDCP protocol.
  * https://github.com/SteveWinfield/PHP-LG-SmartTV
 **/
 
