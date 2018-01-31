@@ -7,7 +7,7 @@ You're able to execute commands and queries.
 
 Query examples: Get current channel info,TV Model 
 
-Command examples: All the keys on the remote and others like: HDMI1-HDMI4,RGB,COMPONENT,AV1,AV2,AV3,ASPECT4:3,ASPECT16:9 
+Command examples: All the keys on the remote and others like: HDMI1-HDMI4, RGB, COMPONENT, AV1, AV2, AV3, Aspect Ratio 4:3, Aspect Ratio 16:9 
 
 **NEEDS CURL**
 
