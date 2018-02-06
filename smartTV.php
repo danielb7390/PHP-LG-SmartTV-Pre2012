@@ -16,94 +16,97 @@ if (!extension_loaded('curl')) {
 	die ('You have to install/enable curl in order to use this application.');
 }
 
-/**
- * Commands List
-**/
-define ('TV_CMD_CHANNEL_UP', 0);
-define ('TV_CMD_CHANNEL_DOWN', 1);
-define ('TV_CMD_VOLUME_UP', 2);
-define ('TV_CMD_VOLUME_DOWN', 3);
-define ('TV_CMD_RIGHT', 6);
-define ('TV_CMD_LEFT', 7);
-define ('TV_CMD_POWER', 8);
-define ('TV_CMD_MUTE_TOGGLE', 9);
-define ('TV_CMD_AUDIO_LANGUAGE', 10);
-define ('TV_CMD_INPUT',11);
-define ('TV_CMD_SLEEP_TIMER',14);
-define ('TV_CMD_TV_RADIO',15);
-define ('TV_CMD_NUMBER_0', 16);
-define ('TV_CMD_NUMBER_1', 17);
-define ('TV_CMD_NUMBER_2', 18);
-define ('TV_CMD_NUMBER_3', 19);
-define ('TV_CMD_NUMBER_4', 20);
-define ('TV_CMD_NUMBER_5', 21);
-define ('TV_CMD_NUMBER_6', 22);
-define ('TV_CMD_NUMBER_7', 23);
-define ('TV_CMD_NUMBER_8', 24);
-define ('TV_CMD_NUMBER_9', 25);
-define ('TV_CMD_PREVIOUS_CHANNEL', 26);
-define ('TV_CMD_FAVORITES', 30);
-define ('TV_CMD_TELETEXT', 32);
-define ('TV_CMD_TELETEXT_OPTION', 33);
-define ('TV_CMD_INFO_BAR', 35);
-define ('TV_CMD_BACK', 40);
-define ('TV_CMD_AV_MODE', 48);
-define ('TV_CMD_SUBTITLE', 57);
-define ('TV_CMD_UP', 64);
-define ('TV_CMD_DOWN', 65);
-define ('TV_CMD_HOME_MENU', 67);
-define ('TV_CMD_OK', 68);
-define ('TV_CMD_QUICK_MENU', 69);
-define ('TV_CMD_DASH', 76);
-define ('TV_CMD_PICTURE_MODE', 77);
-define ('TV_CMD_SOUND_MODE', 82);
-define ('TV_CMD_CHANNEL_LIST', 83);
-define ('TV_CMD_PREMIUM', 89);
-define ('TV_CMD_INPUT_AV1', 90);
-define ('TV_CMD_EXIT', 91);
-define ('TV_CMD_BLUE', 97);
-define ('TV_CMD_YELLOW', 99);
-define ('TV_CMD_GREEN', 113);
-define ('TV_CMD_RED', 114);
-define ('TV_CMD_ASPECT_RATIO_4_3', 118);
-define ('TV_CMD_ASPECT_RATIO_16_9', 119);
-define ('TV_CMD_ASPECT_RATIO', 121);
-define ('TV_CMD_SIMPLINK', 126);
-define ('TV_CMD_FAST_FORWARD', 142);
-define ('TV_CMD_REWIND', 143);
-define ('TV_CMD_AUDIO_DESCRIPTION', 145);
-define ('TV_CMD_ENERGY_SAVING', 149);
-define ('TV_CMD_INPUT_QUICK',152);
-define ('TV_CMD_LIVE_TV', 158);
-define ('TV_CMD_EPG', 169);
-define ('TV_CMD_INFO', 170);
-define ('TV_CMD_ZOOM_CINEMA', 175);
-define ('TV_CMD_PLAY', 176);
-define ('TV_CMD_STOP', 177);
-define ('TV_CMD_PAUSE', 186);
-define ('TV_CMD_RECORD', 189);
-define ('TV_CMD_INPUT_COMPONENT', 191);
-define ('TV_CMD_INPUT_HDMI', 198);
-define ('TV_CMD_INPUT_USB', 200);
-define ('TV_CMD_INPUT_HDMI2', 204);
-define ('TV_CMD_INPUT_HDMI1', 206);
-define ('TV_CMD_HOTEL_MENU', 207);
-define ('TV_CMD_INPUT_AV2', 208);
-define ('TV_CMD_INPUT_AV3', 209);
-define ('TV_CMD_INPUT_RGB', 213);
-define ('TV_CMD_INPUT_HDMI4', 218);
-define ('TV_CMD_3D_VIDEO', 220);
-define ('TV_CMD_INPUT_HDMI3', 233);
-
-/**
- * Query Commands List
-**/
-define ('TV_INFO_MODEL','model_info');
-define ('TV_INFO_CURRENT_CHANNEL', 'cur_channel');
-define ('TV_INFO_CONTEXT_UI', 'context_ui');
-
-
 class SmartTV {
+	/**
+	 * Commands List
+	**/
+	const CMD_CHANNEL_UP = 0;
+	const CMD_CHANNEL_DOWN = 1;
+	const CMD_VOLUME_UP = 2;
+	const CMD_VOLUME_DOWN = 3;
+	const CMD_RIGHT = 6;
+	const CMD_LEFT = 7;
+	const CMD_POWER = 8;
+	const CMD_MUTE_TOGGLE = 9;
+	const CMD_AUDIO_LANGUAGE = 10;
+	const CMD_INPUT =11;
+	const CMD_SLEEP_TIMER =14;
+	const CMD_TV_RADIO =15;
+	const CMD_NUMBER_0 = 16;
+	const CMD_NUMBER_1 = 17;
+	const CMD_NUMBER_2 = 18;
+	const CMD_NUMBER_3 = 19;
+	const CMD_NUMBER_4 = 20;
+	const CMD_NUMBER_5 = 21;
+	const CMD_NUMBER_6 = 22;
+	const CMD_NUMBER_7 = 23;
+	const CMD_NUMBER_8 = 24;
+	const CMD_NUMBER_9 = 25;
+	const CMD_PREVIOUS_CHANNEL = 26;
+	const CMD_FAVORITES = 30;
+	const CMD_TELETEXT = 32;
+	const CMD_TELETEXT_OPTION = 33;
+	const CMD_INFO_BAR = 35;
+	const CMD_BACK = 40;
+	const CMD_AV_MODE = 48;
+	const CMD_SUBTITLE = 57;
+	const CMD_UP = 64;
+	const CMD_DOWN = 65;
+	const CMD_HOME_MENU = 67;
+	const CMD_OK = 68;
+	const CMD_QUICK_MENU = 69;
+	const CMD_DASH = 76;
+	const CMD_PICTURE_MODE = 77;
+	const CMD_SOUND_MODE = 82;
+	const CMD_CHANNEL_LIST = 83;
+	const CMD_PREMIUM = 89;
+	const CMD_INPUT_AV1 = 90;
+	const CMD_EXIT = 91;
+	const CMD_BLUE = 97;
+	const CMD_YELLOW = 99;
+	const CMD_GREEN = 113;
+	const CMD_RED = 114;
+	const CMD_ASPECT_RATIO_4_3 = 118;
+	const CMD_ASPECT_RATIO_16_9 = 119;
+	const CMD_ASPECT_RATIO = 121;
+	const CMD_SIMPLINK = 126;
+	const CMD_FAST_FORWARD = 142;
+	const CMD_REWIND = 143;
+	const CMD_AUDIO_DESCRIPTION = 145;
+	const CMD_ENERGY_SAVING = 149;
+	const CMD_INPUT_QUICK =152;
+	const CMD_LIVE_TV = 158;
+	const CMD_SLIDE_USB2 = 168;
+	const CMD_EPG = 169;
+	const CMD_INFO = 170;
+	const CMD_ZOOM_CINEMA = 175;
+	const CMD_PLAY = 176;
+	const CMD_STOP = 177;
+	const CMD_PAUSE = 186;
+	const CMD_RECORD = 189;
+	const CMD_INPUT_COMPONENT = 191;
+	const CMD_INPUT_HDMI = 198;
+	const CMD_INPUT_USB = 200;
+	const CMD_INPUT_HDMI2 = 204;
+	const CMD_INPUT_HDMI1 = 206;
+	const CMD_HOTEL_MENU = 207;
+	const CMD_INPUT_AV2 = 208;
+	const CMD_INPUT_AV3 = 209;
+	const CMD_INPUT_RGB = 213;
+	const CMD_INPUT_HDMI4 = 218;
+	const CMD_3D_VIDEO = 220;
+	const CMD_INPUT_HDMI3 = 233;
+	const CMD_SLIDE_USB1 = 238;
+
+	/**
+	 * Query Commands List
+	**/
+	const INFO_MODEL = 'model_info';
+	const INFO_CURRENT_CHANNEL = 'cur_channel';
+	const INFO_CONTEXT_UI = 'context_ui';
+	const INFO_FAV_LISTS = 'fav_list';
+	
+	
 	public function __construct($ipAddress, $port = 8080) {
 		$this->connectionDetails = array($ipAddress, $port);
 	}
