@@ -29,10 +29,10 @@ try {
 /*Send commands examples*/
 
 //Send Command to Increase the Volume
-$tv->processCommand(TV_CMD_VOLUME_UP);
+$tv->processCommand(SmartTV::CMD_VOLUME_UP);
 
 //Send Command to Decrease the Volume
-$tv->processCommand(TV_CMD_VOLUME_DOWN);
+$tv->processCommand(SmartTV::CMD_VOLUME_DOWN);
 
 
 
@@ -40,11 +40,11 @@ $tv->processCommand(TV_CMD_VOLUME_DOWN);
 
 //Get TV Model Info
 echo "\n --- Model Info ---\n";
-print_r($tv->queryData(TV_INFO_MODEL));
+print_r($tv->queryData(SmartTV::INFO_MODEL));
 echo "------------------\n\n";
 
 //Get the current channel info
 echo "--- Current Channel Info --\n";
-print_r($tv->queryData(TV_INFO_CURRENT_CHANNEL));
+print_r($tv->queryData(SmartTV::INFO_CURRENT_CHANNEL));
 echo "---------------------------\n";
 
